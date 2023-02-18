@@ -35,10 +35,10 @@ class MainWindow(QWidget):
         
     def generate(self):
         self.label.setText("Generated Password: ")
-        gen_password = passwordGenerator.generate()
-        self.gen_label.setText(gen_password)
+        self.gen_password = passwordGenerator.generate()
+        self.gen_label.setText(self.gen_password)
         self.gen_label.show()
-        return gen_password
+        return self.gen_password
 
     def clean(self):
         self.label.setText("Generate Password: ")
@@ -46,8 +46,8 @@ class MainWindow(QWidget):
         self.gen_label.setText(password)
         return self.gen_label.hide()
     
-    def copy(gen_password):
-        copy_password = gen_password
+    def copy(self):
+        copy_password = self.gen_password
         #to copy generated password to clipboard
         return pyperclip.copy(copy_password)
         
