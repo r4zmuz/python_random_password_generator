@@ -1,14 +1,14 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QWidget, QLabel, QPushButton
-import passwordGenerator
+from password_generator import passwordGenerator
 import pyperclip
 
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-    def initUI(self):
 
+    def initUI(self):
         # Create the widgets
         self.setGeometry(100, 100, 600, 100) #set window size
         self.label = QLabel("Generate Password:", self)
@@ -32,20 +32,23 @@ class MainWindow(QWidget):
         self.copy_button.clicked.connect(self.copy)
         self.clean_button.clicked.connect(self.clean)
 
-        
+    # Generate Password    
     def generate(self):
         self.label.setText("Generated Password: ")
+        # call and catch generated password with function in passwordGenerator
         self.gen_password = passwordGenerator.generate()
         self.gen_label.setText(self.gen_password)
         self.gen_label.show()
         return self.gen_password
 
+    # Delete generated password
     def clean(self):
         self.label.setText("Generate Password: ")
         password = ""
         self.gen_label.setText(password)
         return self.gen_label.hide()
     
+    # Copy to clipboard generated password
     def copy(self):
         copy_password = self.gen_password
         #to copy generated password to clipboard

@@ -1,6 +1,6 @@
 import random
 
-def generate():
+def generate() -> str:
     # https://www.101computing.net/wp/wp-content/uploads/ASCII-Table.pdf (ASCII table)
     # Generate a random Uppercase letter (based on ASCII code)
     uppercaseLetter1 = chr(random.randint(65, 90))

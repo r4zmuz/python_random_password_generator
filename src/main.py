@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication
-from GUI import MainWindow
+from graphical_user_interface.GUI import MainWindow
 
 if __name__ == '__main__':
     # Create an instance of QApplication
