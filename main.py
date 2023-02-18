@@ -7,7 +7,6 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     # Create an instance of MainWindow
     window = MainWindow()
-    # set window size
     # Show the window
     window.show()
     # Run the application's event loop
