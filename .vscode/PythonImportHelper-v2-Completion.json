@@ -1,0 +1,193 @@
+[
+    {
+        "label": "QtWidgets",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "passwordGenerator",
+        "importPath": "password_generator",
+        "description": "password_generator",
+        "isExtraImport": true,
+        "detail": "password_generator",
+        "documentation": {}
+    },
+    {
+        "label": "pyperclip",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyperclip",
+        "description": "pyperclip",
+        "detail": "pyperclip",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "MainWindow",
+        "importPath": "graphical_user_interface.GUI",
+        "description": "graphical_user_interface.GUI",
+        "isExtraImport": true,
+        "detail": "graphical_user_interface.GUI",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "MainWindow",
+        "kind": 6,
+        "importPath": "src.graphical_user_interface.GUI",
+        "description": "src.graphical_user_interface.GUI",
+        "peekOfCode": "class MainWindow(QWidget):\n    def __init__(self):\n        super().__init__()\n        self.initUI()\n    def initUI(self):\n        # Create the widgets\n        self.setGeometry(100, 100, 600, 100) #set window size\n        self.label = QLabel(\"Generate Password:\", self)\n        self.gen_label = QLabel(self)\n        self.gen_label.hide()",
+        "detail": "src.graphical_user_interface.GUI",
+        "documentation": {}
+    },
+    {
+        "label": "generate",
+        "kind": 2,
+        "importPath": "src.password_generator.passwordGenerator",
+        "description": "src.password_generator.passwordGenerator",
+        "peekOfCode": "def generate() -> str:\n    # https://www.101computing.net/wp/wp-content/uploads/ASCII-Table.pdf (ASCII table)\n    # Generate a random Uppercase letter (based on ASCII code)\n    password = []\n    for _ in range(3):\n        uppercaseLetter = list(chr(random.randint(65, 90)))\n        # Generate a random lowercase letter (based on ASCII code)\n        lowercaseLetter = list(chr(random.randint(97, 122)))\n        # Generate a random number (based on ASCII code)\n        digit = list(chr(random.randint(48, 57)))",
+        "detail": "src.password_generator.passwordGenerator",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir] + os.environ.get(\"PATH\", \"\").split(os.pathsep))\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\Lib\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    }
+]
